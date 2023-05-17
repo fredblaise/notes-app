@@ -30,8 +30,8 @@ const MainContent = ({ activeNote, onUpdateNote }) => {
         );
 
     return (
-        <div className="row-span-1 col-span-3 md:col-span-2 flex flex-col gap-4 justify-between">
-            <div className="min-h-full flex-1 fill-available flex flex-col gap-4">
+        <div className="row-span-1 col-span-3 md:col-span-2 flex flex-col justify-between">
+            <div className="min-h-full flex-1 flex flex-col gap-4">
                 <div className="flex justify-between gap-4">
                     <input
                         type="text"

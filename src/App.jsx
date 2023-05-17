@@ -51,7 +51,7 @@ function App() {
   };
 
   return (
-    <div className="[height:100dvh;] w-full grid grid-rows-1 grid-cols-3 gap-4 p-4">
+    <div className="[height:100dvh;] w-full max-w-7xl m-auto grid grid-rows-1 grid-cols-3 gap-4 p-4">
       <InitialModal />
       <StaticSidebar>
         <SidebarContent
