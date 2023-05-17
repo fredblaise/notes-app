@@ -11,7 +11,7 @@ const SidebarContent = ({
 
     return (
         <>
-            <div className="flex justify-between mb-4">
+            <div className="flex justify-between sticky top-0">
                 <h1 className="text-3xl font-semibold">
                     Notes
                 </h1>
@@ -22,7 +22,7 @@ const SidebarContent = ({
                     + Add Note
                 </button>
             </div>
-            <div className="h-full overflow-y-scroll divide-y divide-zinc-400 dark:divide-zinc-500">
+            <div className="flex flex-col h-full overflow-y-scroll divide-y divide-zinc-400 dark:divide-zinc-500">
                 {sortedNotes.map(({ id, title, body, lastModified }, i) => (
                     <div
                         className={`flex justify-between w-full p-4 cursor-pointer dark:text-white ${id === activeNote ? 'bg-zinc-100 dark:bg-zinc-600' : 'hover:bg-zinc-100 hover:dark:bg-zinc-600'} group`}

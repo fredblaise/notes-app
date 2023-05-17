@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import { useState } from 'react'
 
-const Main = ({ activeNote, onUpdateNote }) => {
+const MainContent = ({ activeNote, onUpdateNote }) => {
     const [showPreview, setShowPreview] = useState(false);
 
     function handleChange(event) {
@@ -23,15 +23,15 @@ const Main = ({ activeNote, onUpdateNote }) => {
     if (!activeNote)
         return (
             <>
-                <div className="flex justify-center items-center flex-[2_2_0%] text-zinc-500">
+                <div className="row-span-1 col-span-3 md:col-span-2 grid place-items-center text-zinc-500">
                     <p className="text-5xl">No Active Note</p>
                 </div>
             </>
         );
 
     return (
-        <div className="flex flex-col gap-4 h-full flex-[2_2_0%] justify-between">
-            <div className="h-full flex flex-col gap-4">
+        <div className="row-span-1 col-span-3 md:col-span-2 flex flex-col gap-4 justify-between">
+            <div className="min-h-full flex-1 fill-available flex flex-col gap-4">
                 <div className="flex justify-between gap-4">
                     <input
                         type="text"
@@ -79,4 +79,4 @@ const Main = ({ activeNote, onUpdateNote }) => {
     );
 };
 
-export default Main;
+export default MainContent;

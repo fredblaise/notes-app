@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import Main from "./components/Main";
+import MainContent from "./components/MainContent";
 import StaticSidebar from "./components/StaticSidebar";
 import SlidingSidebar from "./components/SlidingSidebar";
 import SidebarContent from "./components/SidebarContent";
@@ -51,7 +51,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen flex gap-4 p-4">
+    <div className="[height:100dvh;] w-full grid grid-rows-1 grid-cols-3 gap-4 p-4">
       <InitialModal />
       <StaticSidebar>
         <SidebarContent
@@ -71,7 +71,7 @@ function App() {
           setActiveNote={setActiveNote}
         />
       </SlidingSidebar>
-      <Main
+      <MainContent
         activeNote={getActiveNote()}
         onUpdateNote={onUpdateNote}
       />

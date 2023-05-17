@@ -51,7 +51,7 @@ export default function SlidingSidebar({ children }) {
                                 leaveFrom="translate-x-0"
                                 leaveTo="-translate-x-full"
                             >
-                                <Dialog.Panel className="w-3/4 h-full max-w-md transform overflow-hidden rounded-2xl dark:bg-zinc-700 dark:text-white bg-white p-2 text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="flex flex-col gap-4 p-4 w-3/4 h-full max-w-md transform overflow-hidden rounded-2xl dark:bg-zinc-700 dark:text-white bg-white text-left align-middle shadow-xl transition-all">
                                     {children}
                                 </Dialog.Panel>
                             </Transition.Child>

@@ -31,7 +31,3 @@
 * {
     box-sizing: border-box;
 }
-
-html, body {
-    height: -webkit-fill-available;
-}
