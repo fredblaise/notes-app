@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import Main from "./components/Main";
-import Sidebar from "./components/Sidebar";
-import MyModal from "./components/MyModal";
-import './App.css'
+import StaticSidebar from "./components/StaticSidebar";
+import SlidingSidebar from "./components/SlidingSidebar";
+import SidebarContent from "./components/SidebarContent";
+import InitialModal from './components/InitialModal';
 
 function App() {
   const [notes, setNotes] = useState(
@@ -48,31 +49,30 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Sidebar
-        notes={notes}
-        onAddNote={onAddNote}
-        onDeleteNote={onDeleteNote}
-        activeNote={activeNote}
-        setActiveNote={setActiveNote}
-      />
-      <div className="flex flex-col w-full">
-        <div className="md:hidden m-6">
-          <MyModal
+    <div className="h-screen flex gap-4 p-4">
+      <InitialModal />
+      <StaticSidebar>
+        <SidebarContent
           notes={notes}
           onAddNote={onAddNote}
           onDeleteNote={onDeleteNote}
           activeNote={activeNote}
           setActiveNote={setActiveNote}
-          />
-        </div>
-        <div>
-          <Main
-            activeNote={getActiveNote()}
-            onUpdateNote={onUpdateNote}
-          />
-        </div>
-      </div>
+        />
+      </StaticSidebar>
+      <SlidingSidebar>
+        <SidebarContent
+          notes={notes}
+          onAddNote={onAddNote}
+          onDeleteNote={onDeleteNote}
+          activeNote={activeNote}
+          setActiveNote={setActiveNote}
+        />
+      </SlidingSidebar>
+      <Main
+        activeNote={getActiveNote()}
+        onUpdateNote={onUpdateNote}
+      />
     </div>
   );
 }
