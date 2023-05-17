@@ -25,7 +25,7 @@ const SidebarContent = ({
             <div className="h-full overflow-y-scroll divide-y divide-zinc-400 dark:divide-zinc-500">
                 {sortedNotes.map(({ id, title, body, lastModified }, i) => (
                     <div
-                        className={`flex justify-between w-full p-4 cursor-pointer dark:text-white ${id === activeNote ? 'bg-zinc-300 dark:bg-zinc-700' : 'hover:bg-zinc-300 hover:dark:bg-zinc-700'} group`}
+                        className={`flex justify-between w-full p-4 cursor-pointer dark:text-white ${id === activeNote ? 'bg-zinc-100 dark:bg-zinc-700' : 'hover:bg-zinc-100 hover:dark:bg-zinc-700'} group`}
                         onClick={() => {
                             setActiveNote(id)
                         }}
