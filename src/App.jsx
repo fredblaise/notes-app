@@ -22,6 +22,8 @@ function App() {
       title: "Untitled Note",
       body: "",
       lastModified: Date.now(),
+      charCount: 0,
+      wordCount: 0,
     };
 
     setNotes([newNote, ...notes]);

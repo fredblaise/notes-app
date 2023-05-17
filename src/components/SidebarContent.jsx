@@ -22,10 +22,10 @@ const SidebarContent = ({
                     + Add Note
                 </button>
             </div>
-            <div className="h-full overflow-y-scroll divide-y divide-zinc-500">
+            <div className="h-full overflow-y-scroll divide-y divide-zinc-400 dark:divide-zinc-500">
                 {sortedNotes.map(({ id, title, body, lastModified }, i) => (
                     <div
-                        className={`flex justify-between w-full p-4 cursor-pointer text-white ${id === activeNote ? 'bg-zinc-700' : 'hover:bg-zinc-700'} group`}
+                        className={`flex justify-between w-full p-4 cursor-pointer dark:text-white ${id === activeNote ? 'bg-zinc-300 dark:bg-zinc-700' : 'hover:bg-zinc-300 hover:dark:bg-zinc-700'} group`}
                         onClick={() => {
                             setActiveNote(id)
                         }}
@@ -36,13 +36,17 @@ const SidebarContent = ({
                             <p className="truncate">
                                 {body}
                             </p>
-                            <small className="text-zinc-300">
-                                Last Modified{' '}
+                            <small className="text-zinc-800 dark:text-zinc-300">
+                                Last Modified:{' '}
                                 {new Date(lastModified).toLocaleDateString(
-                                    'en-GB',
+                                    'en-US',
                                     {
+                                        month: 'short',
+                                        day: 'numeric',
+                                        year: 'numeric',
                                         hour: '2-digit',
                                         minute: '2-digit',
+                                        hour12: true,
                                     }
                                 )}
                             </small>

@@ -3,20 +3,17 @@ import { useState } from 'react'
 
 const Main = ({ activeNote, onUpdateNote }) => {
     const [showPreview, setShowPreview] = useState(false);
-    const [text, setText] = useState("");
 
     function handleChange(event) {
         onEditField("body", event.target.value);
-        setText(event.target.value);
     }
-
-    const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
-    const charCount = text.length;
 
     const onEditField = (field, value) => {
         onUpdateNote({
             ...activeNote,
             [field]: value,
+            charCount: value.length,
+            wordCount: value.trim().split(/\s+/).filter(Boolean).length,
             lastModified: Date.now(),
         });
     };
@@ -45,7 +42,7 @@ const Main = ({ activeNote, onUpdateNote }) => {
                         autoFocus
                         className="text-4xl w-full px-2 bg-zinc-200 dark:bg-zinc-800 dark:text-white dark:placeholder-gray-400 rounded-md"
                     />
-                    <button onClick={() => setShowPreview(!showPreview)} className='hidden md:block font-semibold aspect-square p-2 h-20 transition dark:text-white hover:text-white dark:hover:bg-gray-500 hover:bg-gray-200 rounded-full'>
+                    <button onClick={() => setShowPreview(!showPreview)} className='hidden md:block font-semibold aspect-square p-2 h-20 transition dark:text-white dark:hover:bg-gray-500 hover:bg-gray-200 rounded-full'>
                         Show<br />{showPreview ? "Source" : "Preview"}
                     </button>
                     <button onClick={() => setShowPreview(!showPreview)} className='md:hidden font-semibold aspect-square p-2 h-12 bg-gray-500 dark:text-white rounded-full'>
@@ -76,7 +73,7 @@ const Main = ({ activeNote, onUpdateNote }) => {
                         Nothing to see here...
                     </p>
                 </div>
-                <p className="ml-auto dark:text-white">{charCount} characters | {wordCount} words</p>
+                <p className="ml-auto dark:text-white">{activeNote.charCount} characters | {activeNote.wordCount} words</p>
             </div>
         </div>
     );
