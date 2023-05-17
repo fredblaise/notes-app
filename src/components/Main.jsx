@@ -40,12 +40,12 @@ const Main = ({ activeNote, onUpdateNote }) => {
                         value={activeNote.title}
                         onChange={(e) => onEditField("title", e.target.value)}
                         autoFocus
-                        className="text-4xl w-full px-2 bg-zinc-200 dark:bg-zinc-800 dark:text-white dark:placeholder-gray-400 rounded-md"
+                        className="text-4xl w-full px-2 bg-zinc-200 dark:bg-zinc-700 dark:text-white dark:placeholder-gray-400 rounded-md"
                     />
                     <button onClick={() => setShowPreview(!showPreview)} className='hidden md:block font-semibold aspect-square p-2 h-20 transition dark:text-white dark:hover:bg-gray-500 hover:bg-gray-200 rounded-full'>
                         Show<br />{showPreview ? "Source" : "Preview"}
                     </button>
-                    <button onClick={() => setShowPreview(!showPreview)} className='md:hidden font-semibold aspect-square p-2 h-12 bg-gray-500 dark:text-white rounded-full'>
+                    <button onClick={() => setShowPreview(!showPreview)} className='md:hidden font-semibold aspect-square p-2 h-12 bg-gray-500 text-white rounded-full'>
                         {showPreview ?
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
@@ -63,7 +63,7 @@ const Main = ({ activeNote, onUpdateNote }) => {
                     value={activeNote.body}
                     rows="20"
                     onChange={handleChange}
-                    className={`resize-none h-full w-full p-2 bg-zinc-200 dark:bg-zinc-800 dark:text-white dark:placeholder-zinc-400 rounded-md ${showPreview ? "hidden" : ""}`}
+                    className={`resize-none h-full w-full p-2 bg-zinc-200 dark:bg-zinc-700 dark:text-white dark:placeholder-zinc-400 rounded-md ${showPreview ? "hidden" : ""}`}
                 />
                 <div className={`${showPreview ? "" : "hidden"} dark:text-white break-words h-full p-2 overflow-y-scroll`}>
                     <ReactMarkdown >
