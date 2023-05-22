@@ -14,11 +14,11 @@ export default function SlidingSidebar({ children }) {
 
     return (
         <>
-            <div className="fixed bottom-4 left-4 flex items-center justify-center md:hidden">
+            <div className="flex items-center justify-center md:hidden">
                 <button
                     type="button"
                     onClick={openModal}
-                    className="aspect-square rounded-full bg-gray-500 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                    className="text-sm font-medium text-white aspect-square focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -41,7 +41,7 @@ export default function SlidingSidebar({ children }) {
                     </Transition.Child>
 
                     <div className="fixed inset-0 overflow-y-auto">
-                        <div className="flex h-full items-center p-4 text-center">
+                        <div className="flex items-center h-full p-4 text-center">
                             <Transition.Child
                                 as={Fragment}
                                 enter="translate ease-out duration-300"
@@ -51,7 +51,7 @@ export default function SlidingSidebar({ children }) {
                                 leaveFrom="translate-x-0"
                                 leaveTo="-translate-x-full"
                             >
-                                <Dialog.Panel className="flex flex-col gap-4 p-4 w-3/4 h-full max-w-md transform overflow-hidden rounded-2xl dark:bg-zinc-700 dark:text-white bg-white text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="flex flex-col w-3/4 h-full max-w-md gap-4 p-4 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl dark:bg-zinc-700 dark:text-white">
                                     {children}
                                 </Dialog.Panel>
                             </Transition.Child>

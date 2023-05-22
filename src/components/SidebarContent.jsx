@@ -11,21 +11,10 @@ const SidebarContent = ({
 
     return (
         <>
-            <div className="flex justify-between sticky top-0">
-                <h1 className="text-3xl font-semibold">
-                    Notes
-                </h1>
-                <button
-                    className="rounded-full text-xl px-2 text-blue-500 transition hover:bg-blue-500 hover:text-white"
-                    onClick={onAddNote}
-                >
-                    + Add Note
-                </button>
-            </div>
             <div className="flex flex-col h-full overflow-y-scroll divide-y divide-zinc-400 dark:divide-zinc-500">
                 {sortedNotes.map(({ id, title, body, lastModified }, i) => (
                     <div
-                        className={`flex justify-between w-full p-4 cursor-pointer dark:text-white ${id === activeNote ? 'bg-zinc-100 dark:bg-zinc-600' : 'hover:bg-zinc-100 hover:dark:bg-zinc-600'} group`}
+                        className={`flex justify-between w-full p-4 gap-2 cursor-pointer dark:text-white ${id === activeNote ? 'bg-zinc-200 dark:bg-zinc-800' : 'hover:bg-zinc-200 hover:dark:bg-zinc-800'} group`}
                         onClick={() => {
                             setActiveNote(id)
                         }}
@@ -55,7 +44,7 @@ const SidebarContent = ({
                         <div className='flex place-items-center'>
                             <button
                                 onClick={(e) => onDeleteNote(id)}
-                                className="md:invisible aspect-square rounded-full p-1 text-red-500 transition hover:bg-red-500 hover:text-white group-hover:visible"
+                                className="md:hidden aspect-square rounded-full p-1 text-red-500 transition hover:scale-105 bg-red-500 max-sm:text-white md:bg-transparent md:hover:bg-red-500 md:hover:text-white group-hover:block"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -75,6 +64,14 @@ const SidebarContent = ({
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className="sticky top-0 w-full grid place-items-center max-sm:p-8">
+                <button
+                    className="rounded-full text-xl max-sm:text-2xl px-2 md:text-blue-500 transition hover:scale-105 hover:bg-blue-500 bg-blue-500 md:bg-transparent text-white hover:text-white"
+                    onClick={onAddNote}
+                >
+                    + Add Note
+                </button>
             </div>
         </>
     )

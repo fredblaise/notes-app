@@ -31,3 +31,11 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    background-color: lightgray;
+}
+
+html, body {
+    max-height: 100svh;
+}
