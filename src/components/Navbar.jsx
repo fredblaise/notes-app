@@ -28,7 +28,7 @@ export default function Navbar({ notes, onAddNote, onDeleteNote, activeNote, set
                             </div>
                             <div className="flex items-center justify-center flex-1 md:items-stretch">
                                 <div className="flex items-center flex-shrink-0">
-                                    <p className="text-4xl dark:text-white">
+                                    <p className="text-4xl text-white">
                                         NOTES
                                     </p>
                                 </div>

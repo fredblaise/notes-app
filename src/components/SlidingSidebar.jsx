@@ -41,7 +41,7 @@ export default function SlidingSidebar({ children }) {
                     </Transition.Child>
 
                     <div className="fixed inset-0 overflow-y-auto">
-                        <div className="flex items-center h-full p-4 text-center">
+                        <div className="flex items-center h-full text-center">
                             <Transition.Child
                                 as={Fragment}
                                 enter="translate ease-out duration-300"
@@ -51,7 +51,7 @@ export default function SlidingSidebar({ children }) {
                                 leaveFrom="translate-x-0"
                                 leaveTo="-translate-x-full"
                             >
-                                <Dialog.Panel className="flex flex-col w-3/4 h-full max-w-md gap-4 p-4 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl dark:bg-zinc-700 dark:text-white">
+                                <Dialog.Panel className="flex flex-col w-3/4 h-full max-w-md gap-4 p-4 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl dark:bg-zinc-700 dark:text-white">
                                     {children}
                                 </Dialog.Panel>
                             </Transition.Child>

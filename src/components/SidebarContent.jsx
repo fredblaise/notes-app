@@ -11,6 +11,14 @@ const SidebarContent = ({
 
     return (
         <>
+            <div className="sticky top-0 w-full grid place-items-center max-sm:p-8">
+                <button
+                    className="w-full rounded-full text-xl max-sm:text-2xl px-2 md:text-blue-500 transition hover:scale-105 hover:bg-blue-500 bg-blue-500 md:bg-transparent text-white hover:text-white"
+                    onClick={onAddNote}
+                >
+                    + Add Note
+                </button>
+            </div>
             <div className="flex flex-col h-full overflow-y-scroll divide-y divide-zinc-400 dark:divide-zinc-500">
                 {sortedNotes.map(({ id, title, body, lastModified }, i) => (
                     <div
@@ -44,7 +52,7 @@ const SidebarContent = ({
                         <div className='flex place-items-center'>
                             <button
                                 onClick={(e) => onDeleteNote(id)}
-                                className="md:hidden aspect-square rounded-full p-1 text-red-500 transition hover:scale-105 bg-red-500 max-sm:text-white md:bg-transparent md:hover:bg-red-500 md:hover:text-white group-hover:block"
+                                className="md:hidden aspect-square rounded-full p-1 text-red-500 transition hover:scale-105 bg-red-500 max-md:text-white md:bg-transparent md:hover:bg-red-500 md:hover:text-white group-hover:block"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -64,14 +72,6 @@ const SidebarContent = ({
                         </div>
                     </div>
                 ))}
-            </div>
-            <div className="sticky top-0 w-full grid place-items-center max-sm:p-8">
-                <button
-                    className="rounded-full text-xl max-sm:text-2xl px-2 md:text-blue-500 transition hover:scale-105 hover:bg-blue-500 bg-blue-500 md:bg-transparent text-white hover:text-white"
-                    onClick={onAddNote}
-                >
-                    + Add Note
-                </button>
             </div>
         </>
     )
